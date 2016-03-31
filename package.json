@@ -1,11 +1,11 @@
 {
-  "name": "Pushy",
-  "description": "Pushy is a responsive off-canvas navigation menu using CSS transforms & transitions",
-  "version": "1.0.0",
-  "homepage": "http://www.christopheryee.ca/pushy/",
+  "name": "242-off-canvas",
+  "description": "Fork from Pushy",
+  "version": "1.0.1",
+  "homepage": "https://github.com/bahamagician/242-off-canvas",
   "author": {
-    "name": "Christopher Yee",
-    "url": "http://www.christopheryee.ca/"
+    "name": "Christopher Thronebury",
+    "url": "https://github.com/bahamagician"
   },
   "devDependencies": {
     "grunt": "~0.4.4",
