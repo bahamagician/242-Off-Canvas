@@ -1,11 +1,19 @@
-/*! Pushy - v1.0.0 - 2016-3-1
-* Pushy is a responsive off-canvas navigation menu using CSS transforms & transitions.
-* https://github.com/christophery/pushy/
-* by Christopher Yee */
+.pushy {
+  box-shadow: inset -10px 0 6px -9px rgba(0, 0, 0, 0.7);
+  background-color: #333332 !important;
+}
+.pushy a {
+  font-family: sans-serif;
+}
+.pushy ul > li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 /* Menu Appearance */
 .pushy {
   position: fixed;
-  width: 200px;
+  width: 250px;
   height: 100%;
   top: 0;
   z-index: 9999;
@@ -26,7 +34,7 @@
   color: #FFF;
 }
 .pushy ul:first-child {
-  margin-top: 10px;
+  margin-top: 0px;
 }
 .pushy.pushy-left {
   left: 0;
@@ -37,36 +45,36 @@
 
 /* Menu Movement */
 .pushy-left {
-  -webkit-transform: translate3d(-200px, 0, 0);
-  -ms-transform: translate3d(-200px, 0, 0);
-  transform: translate3d(-200px, 0, 0);
+  -webkit-transform: translateX(-250px);
+  -ms-transform: translateX(-250px);
+  transform: translateX(-250px);
 }
 
 .pushy-open-left #container,
 .pushy-open-left .push {
-  -webkit-transform: translate3d(200px, 0, 0);
-  -ms-transform: translate3d(200px, 0, 0);
-  transform: translate3d(200px, 0, 0);
+  -webkit-transform: translateX(250px);
+  -ms-transform: translateX(250px);
+  transform: translateX(250px);
 }
 
 .pushy-right {
-  -webkit-transform: translate3d(200px, 0, 0);
-  -ms-transform: translate3d(200px, 0, 0);
-  transform: translate3d(200px, 0, 0);
+  -webkit-transform: translateX(250px);
+  -ms-transform: translateX(250px);
+  transform: translateX(250px);
 }
 
 .pushy-open-right #container,
 .pushy-open-right .push {
-  -webkit-transform: translate3d(-200px, 0, 0);
-  -ms-transform: translate3d(-200px, 0, 0);
-  transform: translate3d(-200px, 0, 0);
+  -webkit-transform: translateX(-250px);
+  -ms-transform: translateX(-250px);
+  transform: translateX(-250px);
 }
 
 .pushy-open-left .pushy,
 .pushy-open-right .pushy {
-  -webkit-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
 }
 
 /* Menu Transitions */
@@ -126,14 +134,14 @@
   position: relative;
 }
 .pushy-submenu > a::after {
-  content: '';
   display: block;
   height: 11px;
   width: 8px;
   position: absolute;
   top: 50%;
   right: 15px;
-  background: url("../img/arrow.svg") no-repeat;
+  content: '\f054';
+  font: normal normal normal 14px / 1 FontAwesome;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -167,6 +175,21 @@
 .no-csstransforms3d .pushy-submenu-closed ul {
   max-height: none;
   display: none;
+}
+
+.pushy-body-styles {
+  overflow-x: hidden;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  background-image: url("../img/bgimage.jpg");
+  overflow-x: hidden;
+}
+
+body.pushy-open-left sticky-nav {
+  transform: translateX(250px);
 }
 
 /*# sourceMappingURL=pushy.css.map */
