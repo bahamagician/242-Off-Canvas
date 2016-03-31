@@ -1,7 +1,7 @@
 /*! Pushy - v1.0.0 - 2016-3-1
-* Pushy is a responsive off-canvas navigation menu using CSS transforms & transitions.
-* https://github.com/christophery/pushy/
-* by Christopher Yee */
+ * Pushy is a responsive off-canvas navigation menu using CSS transforms & transitions.
+ * https://github.com/christophery/pushy/
+ * by Christopher Yee */
 
 (function ($) {
 	var pushy = $('.pushy'), //menu css class
@@ -24,12 +24,14 @@
 		//add class to body based on menu position
 		if( pushy.hasClass(pushyLeft) ){
 			body.toggleClass(pushyOpenLeft);
+			$('html').toggleClass('pushy-body-styles');
+			$('body').toggleClass('pushy-body-styles');
 		}else{
 			body.toggleClass(pushyOpenRight);
 		}
 	}
 
-	function openPushyFallback(){		
+	function openPushyFallback(){
 
 		//animate menu position based on CSS class
 		if( pushy.hasClass(pushyLeft) ){
@@ -70,55 +72,55 @@
 		$(submenuClass).addClass(submenuClosedClass);
 
 		$(submenuClass).on('click', function(){
-	        var selected = $(this);
+			var selected = $(this);
 
-	        if( selected.hasClass(submenuClosedClass) ) {
-	            //hide opened submenus
-	            $(submenuClass).addClass(submenuClosedClass).removeClass(submenuOpenClass);
-	            //show submenu
-	            selected.removeClass(submenuClosedClass).addClass(submenuOpenClass);
-	        }else{
-	            //hide submenu
-	            selected.addClass(submenuClosedClass).removeClass(submenuOpenClass);
-	        }
-	    });
+			if( selected.hasClass(submenuClosedClass) ) {
+				//hide opened submenus
+				$(submenuClass).addClass(submenuClosedClass).removeClass(submenuOpenClass);
+				//show submenu
+				selected.removeClass(submenuClosedClass).addClass(submenuOpenClass);
+			}else{
+				//hide submenu
+				selected.addClass(submenuClosedClass).removeClass(submenuOpenClass);
+			}
+		});
 	}
-	
-    function toggleSubmenuFallback(){
-    	//hide submenu by default
-    	$(submenuClass).addClass(submenuClosedClass);
-    	
-    	submenu.children('a').on('click', function(event){
-    		event.preventDefault();
-    		$(this).toggleClass(submenuOpenClass)
-    			   .next('.pushy-submenu ul').slideToggle(200)
-    			   .end().parent(submenuClass)
-    			   .siblings(submenuClass).children('a')
-    			   .removeClass(submenuOpenClass)
-    			   .next('.pushy-submenu ul').slideUp(200);
-    	});
-    }
+
+	function toggleSubmenuFallback(){
+		//hide submenu by default
+		$(submenuClass).addClass(submenuClosedClass);
+
+		submenu.children('a').on('click', function(event){
+			event.preventDefault();
+			$(this).toggleClass(submenuOpenClass)
+				.next('.pushy-submenu ul').slideToggle(200)
+				.end().parent(submenuClass)
+				.siblings(submenuClass).children('a')
+				.removeClass(submenuOpenClass)
+				.next('.pushy-submenu ul').slideUp(200);
+		});
+	}
 
 	//checks if 3d transforms are supported removing the modernizr dependency
 	var cssTransforms3d = (function csstransforms3d(){
 		var el = document.createElement('p'),
-		supported = false,
-		transforms = {
-		    'webkitTransform':'-webkit-transform',
-		    'OTransform':'-o-transform',
-		    'msTransform':'-ms-transform',
-		    'MozTransform':'-moz-transform',
-		    'transform':'transform'
-		};
+			supported = false,
+			transforms = {
+				'webkitTransform':'-webkit-transform',
+				'OTransform':'-o-transform',
+				'msTransform':'-ms-transform',
+				'MozTransform':'-moz-transform',
+				'transform':'transform'
+			};
 
 		// Add it to the body to get the computed style
 		document.body.insertBefore(el, null);
 
 		for(var t in transforms){
-		    if( el.style[t] !== undefined ){
-		        el.style[t] = 'translate3d(1px,1px,1px)';
-		        supported = window.getComputedStyle(el).getPropertyValue(transforms[t]);
-		    }
+			if( el.style[t] !== undefined ){
+				el.style[t] = 'translate3d(1px,1px,1px)';
+				supported = window.getComputedStyle(el).getPropertyValue(transforms[t]);
+			}
 		}
 
 		document.body.removeChild(el);
@@ -153,7 +155,7 @@
 		}
 
 		//make menu visible
-		pushy.css({'visibility': 'visible'}); 
+		pushy.css({'visibility': 'visible'});
 		//fixes IE scrollbar issue
 		container.css({"overflow-x": "hidden"});
 
