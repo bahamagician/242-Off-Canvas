@@ -3,6 +3,8 @@
 
 /index.html
 node_modules
+bower_components
+.idea
 .sass-cache
 .htaccess
 
