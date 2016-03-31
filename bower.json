@@ -1,11 +1,11 @@
 {
-  "name": "pushy",
+  "name": "242-off-canvas",
   "version": "1.0.0",
-  "homepage": "https://github.com/christophery/pushy",
+  "homepage": "https://github.com/bahamagician/242-off-canvas",
   "authors": [
-    "christophery <@cmyee>"
+    "bahamagician"
   ],
-  "description": "Pushy is a responsive off-canvas navigation menu using CSS transforms & transitions.",
+  "description": "Forked from Pushy",
   "main": [
     "js/pushy.js",
     "css/pushy.css"
@@ -17,7 +17,7 @@
     "responsive"
   ],
   "license": "MIT",
-  "private": true,
+  "private": false,
   "ignore": [
     "**/.*",
     "node_modules",
