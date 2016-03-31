@@ -215,7 +215,7 @@ body{
     overflow-x:hidden;
 }
 
-body.pushy-open-left #{$sticky-item} {
+body.pushy-open-left ##{$sticky-item} {
     transform: translateX($menu_width);
 }
 
