@@ -1,10 +1,17 @@
-/*! Pushy - v1.0.0 - 2016-3-1
-* Pushy is a responsive off-canvas navigation menu using CSS transforms & transitions.
-* https://github.com/christophery/pushy/
-* by Christopher Yee */
+$sticky-item: '#sticky-nav';
+$menu_width: 250px;
 
-$menu_width: 200px;
-
+.pushy{
+    box-shadow:inset -10px 0 6px -9px rgba(0,0,0,.7);
+    background-color: #333332 !important;
+    a{
+        font-family: sans-serif;
+    }
+    ul > li{
+        border-bottom:1px solid rgba(0,0,0,.1);
+        border-top:1px solid rgba(255,255,255,.1);
+    }
+}
 /* Menu Appearance */
 
 .pushy{
@@ -31,7 +38,7 @@ $menu_width: 200px;
     }
 
     ul:first-child{
-        margin-top: 10px;
+        margin-top: 0px;
     }
 
     &.pushy-left{
@@ -46,41 +53,41 @@ $menu_width: 200px;
 /* Menu Movement */
 
 .pushy-left{
-    -webkit-transform: translate3d( unquote('-' + $menu_width) ,0,0);
-    -ms-transform: translate3d( unquote('-' + $menu_width) ,0,0);
-    transform: translate3d( unquote('-' + $menu_width) ,0,0);
+    -webkit-transform: translateX( unquote('-' + $menu_width));
+    -ms-transform: translateX( unquote('-' + $menu_width));
+    transform: translateX( unquote('-' + $menu_width));
 }
 
 .pushy-open-left{
     #container,
     .push{
-        -webkit-transform: translate3d( $menu_width ,0,0);
-        -ms-transform: translate3d( $menu_width ,0,0);
-        transform: translate3d( $menu_width ,0,0);
+        -webkit-transform: translateX( $menu_width);
+        -ms-transform: translateX( $menu_width);
+        transform: translateX( $menu_width);
     }
 }
 
 .pushy-right{
-    -webkit-transform: translate3d( $menu_width ,0,0);
-    -ms-transform: translate3d( $menu_width ,0,0);
-    transform: translate3d( $menu_width ,0,0);
+    -webkit-transform: translateX( $menu_width);
+    -ms-transform: translateX( $menu_width);
+    transform: translateX( $menu_width);
 }
 
 .pushy-open-right{
     #container,
     .push{
-        -webkit-transform: translate3d( unquote('-' + $menu_width) ,0,0);
-        -ms-transform: translate3d( unquote('-' + $menu_width) ,0,0);
-        transform: translate3d( unquote('-' + $menu_width) ,0,0);
+        -webkit-transform: translateX( unquote('-' + $menu_width));
+        -ms-transform: translateX( unquote('-' + $menu_width));
+        transform: translateX( unquote('-' + $menu_width));
     }
 }
 
 .pushy-open-left,
 .pushy-open-right{
     .pushy{
-        -webkit-transform: translate3d(0,0,0);
-        -ms-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0);
     }
 }
 
@@ -143,14 +150,14 @@ $menu_width: 200px;
     }
 
     > a::after {
-        content: '';
         display: block;
         height: 11px;
         width: 8px;
         position: absolute;
         top: 50%;
         right: 15px;
-        background: url("../img/arrow.svg") no-repeat;
+        content: '\f054';
+        font: normal normal normal 14px / 1 FontAwesome;
         -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
@@ -196,4 +203,18 @@ $menu_width: 200px;
             display: none;
         }
     }
+}
+
+.pushy-body-styles{
+    overflow-x : hidden;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+body{
+    background-image: url("../img/bgimage.jpg");
+    overflow-x:hidden;
+}
+
+body.pushy-open-left $sticky-item {
+    transform: translateX($menu_width);
 }
