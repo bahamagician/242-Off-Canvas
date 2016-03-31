@@ -192,4 +192,12 @@ body.pushy-open-left sticky-nav {
   transform: translateX(250px);
 }
 
+.pushy ul {
+  margin-left: 0px;
+}
+
+.pushy li {
+  list-style: none;
+}
+
 /*# sourceMappingURL=pushy.css.map */

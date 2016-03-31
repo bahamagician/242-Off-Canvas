@@ -218,3 +218,10 @@ body{
 body.pushy-open-left #{$sticky-item} {
     transform: translateX($menu_width);
 }
+
+.pushy ul{
+    margin-left:0px;
+}
+.pushy li{
+    list-style: none;
+}
