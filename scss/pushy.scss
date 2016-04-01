@@ -205,14 +205,13 @@ $menu_width: 250px;
     }
 }
 
-.pushy-body-styles{
-    overflow-x : hidden;
-    height: 100%;
-    -webkit-overflow-scrolling: touch;
-}
 body{
-    background-image: url("../img/bgimage.jpg");
-    overflow-x:hidden;
+    overflow-x: hidden;
+    max-width: 100%;
+}
+html{
+    height:100%;
+    max-width: 100%;
 }
 
 body.pushy-open-left ##{$sticky-item} {
