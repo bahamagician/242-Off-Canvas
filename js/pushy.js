@@ -24,8 +24,6 @@
 		//add class to body based on menu position
 		if( pushy.hasClass(pushyLeft) ){
 			body.toggleClass(pushyOpenLeft);
-			$('html').toggleClass('pushy-body-styles');
-			$('body').toggleClass('pushy-body-styles');
 		}else{
 			body.toggleClass(pushyOpenRight);
 		}
